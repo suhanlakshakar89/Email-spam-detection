@@ -1,7 +1,8 @@
 import streamlit as st
 import pickle
+with open('vectorizer.pkl', 'rb') as file:
+    tfidf = pickle.load(file)
 
-tfidf = pickle.load(open('vectorizer.pkl', 'rb'))
 mnb = pickle.load(open('model.pkl', 'rb'))
 st.title("Email spam detection")
 
